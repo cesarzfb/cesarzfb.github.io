@@ -1,0 +1,344 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal de materias</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(135deg, #0f172a 0%, #2e4e0e 100%);
+      color: var(--text);
+    }
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 .5rem;
+      font-size: 2rem;
+      letter-spacing: .5px;
+    }
+    header p {
+      margin: 0;
+      color: #cbd5e1;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+    }
+    .card {
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #334155;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .card a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .card h2 {
+      margin: 0 0 .5rem;
+      font-size: 1.1rem;
+    }
+    .card p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid #1f2937;
+      color: #94a3b8;
+    }
+    .tag {
+      display: inline-block;
+      margin-top: .6rem;
+      padding: .2rem .5rem;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      font-size: .8rem;
+      color: #cbd5e1;
+    }
+    .accent { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portal de materias</h1>
+    <p>Elige una materia para entrar a su página.</p>
+  </header>
+
+  <main class="grid">
+  <article class="card">
+    <a href="mateselectos/temas.pdf">
+      <h2>Temas selectos matemáticos II</h2>
+      <p>Profundización en tópicos avanzados y aplicaciones.</p>
+      <span class="tag">Matemáticas</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="conciencia/materiaconcienciahistorica.html">
+      <h2>Conciencia histórica II. México durante el expansionismo capitalista</h2>
+      <p>Análisis crítico del pasado para comprender el presente.</p>
+      <span class="tag">Historia</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="ingles/materiainglesv.html">
+      <h2>Inglés V</h2>
+      <p>Estudio de influencias y transformaciones socioeconómicas.</p>
+      <span class="tag">Idioma</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="laenergia/materiaenergia.html">
+      <h2>La energía en los procesos de la vida diaria</h2>
+      <p>Flujos de energía y eficiencia en contextos cotidianos.</p>
+      <span class="tag">Ciencias</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="pensamientomate/materiapensamientomatematico.html">
+      <h2>Aplicaciones del pensamiento matemático</h2>
+      <p>Modelación, razonamiento y resolución de problemas.</p>
+      <span class="tag">Matemáticas</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="construye/formulario.html">
+      <h2>Construye aplicaciones web</h2>
+      <p>Fundamentos de frontend, UX y despliegue.</p>
+      <span class="tag">Web</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="implementa/materiaimplementa.html">
+      <h2>Implementa aplicaciones web</h2>
+      <p>Backend, integración y mantenimiento.</p>
+      <span class="tag">Web</span>
+    </a>
+  </article>
+
+  <article class="card">
+    <a href="socioemocional/materiasocioemocional.html">
+      <h2>Formación socioemocional</h2>
+      <p>Habilidades para la vida, convivencia y bienestar.</p>
+      <span class="tag">Socioemocional</span>
+    </a>
+  </article>
+</main>
+
+
+  <footer>
+    <small>© 2025 Portal académico · <span class="accent">CBTis 153</span></small>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .falling-leaves {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1; /* detrás del contenido */
+    overflow: hidden;
+  }
+
+  .leaf {
+    position: absolute;
+    top: -10vh;
+    will-change: transform, opacity;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+    /* Color base (se puede alterar por CSS variables) */
+  }
+
+  /* Animación de caída */
+  @keyframes fall {
+    0% {
+      transform: translate(var(--x, 0), -10vh) rotate(0deg);
+      opacity: 0.0;
+    }
+    5% { opacity: 0.9; }
+    50% {
+      transform: translate(calc(var(--x, 0) + var(--drift, 0px)), 50vh) rotate(180deg);
+    }
+    100% {
+      transform: translate(calc(var(--x, 0) + var(--drift, 0px)), 110vh) rotate(360deg);
+      opacity: 0.0;
+    }
+  }
+
+  /* Oscilación lateral suave */
+  @keyframes sway {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Estilos para diferentes tipos de hoja usando SVG inline */
+  .leaf svg {
+    display: block;
+    width: var(--size, 24px);
+    height: var(--size, 24px);
+    transform: rotate(var(--rotate, 0deg));
+  }
+
+  /* Paleta otoñal */
+  .c1 { --fill: #d97706; } /* ámbar */
+  .c2 { --fill: #b45309; } /* naranja tostado */
+  .c3 { --fill: #a16207; } /* mostaza */
+  .c4 { --fill: #dc2626; } /* rojo hoja */
+  .c5 { --fill: #16a34a; } /* verde */
+
+  /* Burbujas/partículas extra opcionales */
+  .leaf::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 50%;
+    width: calc(var(--size, 24px) * 0.15);
+    height: calc(var(--size, 24px) * 0.15);
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<div class="falling-leaves" id="fallingLeaves"></div>
+
+<script>
+  // Configuración
+  const MAX_LEAVES = 24;        // número máximo simultáneo
+  const SPAWN_INTERVAL = 700;   // ms entre nuevas hojas
+  const MIN_DURATION = 8;       // segundos
+  const MAX_DURATION = 16;      // segundos
+  const MIN_SIZE = 18;          // px
+  const MAX_SIZE = 42;          // px
+
+  const colors = ['c1','c2','c3','c4','c5'];
+  const shapes = [
+    // Hoja simple (forma elíptica con vena central)
+    `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+       <path d="M32 4
+                C 10 12, 6 36, 18 50
+                C 28 62, 50 54, 58 36
+                C 64 20, 50 8, 32 4 Z"
+             fill="var(--fill)" />
+       <path d="M32 8 L32 56" stroke="#0b1020" stroke-width="2" opacity=".4"/>
+     </svg>`,
+    // Hoja de arce estilizada
+    `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+       <path d="M32 6
+                L26 18 L14 16 L20 26 L10 32
+                L22 34 L20 46 L30 40 L32 52
+                L34 40 L44 46 L42 34 L54 32
+                L44 26 L50 16 L38 18 Z"
+             fill="var(--fill)" />
+       <path d="M32 10 L32 52" stroke="#0b1020" stroke-width="2" opacity=".4"/>
+     </svg>`,
+    // Hoja lanceolada
+    `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+       <path d="M32 6
+                C 22 14, 16 26, 16 36
+                C 16 50, 26 58, 32 58
+                C 40 58, 48 50, 48 36
+                C 48 24, 42 12, 32 6 Z"
+             fill="var(--fill)" />
+       <path d="M32 10 L32 56" stroke="#0b1020" stroke-width="2" opacity=".35"/>
+     </svg>`
+  ];
+
+  const container = document.getElementById('fallingLeaves');
+  const active = new Set();
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function spawnLeaf() {
+    if (active.size >= MAX_LEAVES) return;
+
+    const leaf = document.createElement('div');
+    leaf.className = `leaf ${colors[Math.floor(rand(0, colors.length))]}`;
+    leaf.style.setProperty('--size', `${rand(MIN_SIZE, MAX_SIZE)}px`);
+    leaf.style.setProperty('--x', `${rand(0, 100)}vw`);
+    leaf.style.setProperty('--drift', `${rand(-60, 60)}px`);
+    leaf.style.setProperty('--rotate', `${rand(-30, 30)}deg`);
+
+    // Duración y delay para variación natural
+    const duration = rand(MIN_DURATION, MAX_DURATION);
+    const delay = rand(0, 3);
+
+    // Elegir forma SVG
+    leaf.innerHTML = shapes[Math.floor(rand(0, shapes.length))];
+
+    // Aplicar animación de caída
+    leaf.style.animation = `fall ${duration}s linear ${delay}s forwards`;
+
+    // Oscilación adicional suave (opcional)
+    leaf.firstElementChild.style.animation = `sway ${rand(3,6)}s ease-in-out ${rand(0,2)}s infinite`;
+
+    container.appendChild(leaf);
+    active.add(leaf);
+
+    // Remover al finalizar
+    const total = (duration + delay) * 1000;
+    setTimeout(() => {
+      active.delete(leaf);
+      leaf.remove();
+    }, total + 100);
+  }
+
+  // Generación periódica
+  const interval = setInterval(spawnLeaf, SPAWN_INTERVAL);
+
+  // Crear algunas hojas iniciales
+  for (let i = 0; i < 8; i++) spawnLeaf();
+
+  // Limpieza si hiciera falta (por ejemplo, al cambiar de ruta SPA)
+  window.addEventListener('beforeunload', () => clearInterval(interval));
+</script>
+
+
+
+
+
+</body>
+</html>
